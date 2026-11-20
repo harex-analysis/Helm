@@ -22,6 +22,10 @@ let app = await open();
 const errors = [];
 try {
   const win = await app.firstWindow();
+  if (process.argv.includes('--compact')) {
+    await app.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].setSize(960, 760));
+    await win.waitForFunction(() => window.innerWidth <= 965);
+  }
   win.setDefaultTimeout(22000);
   assert.equal(await win.title(), 'Helm');
   await win.locator('.helm-mark').evaluate(img => img.decode());
@@ -103,7 +107,12 @@ try {
   await win.locator('#builder-tail').scrollIntoViewIfNeeded();
   await win.waitForFunction(count => document.querySelectorAll('.crew-card').length > count, visibleCards);
   await win.locator('#main').evaluate(main => main.scrollTop = 0);
-  assert.ok(await win.locator('.crew-art').first().evaluate(button => button.getBoundingClientRect().width >= 140));
+  const cardBox = await win.locator('.crew-art').first().evaluate(button => ({
+    width: button.getBoundingClientRect().width, compact: matchMedia('(max-width: 1120px)').matches
+  }));
+  // The gallery uses smaller columns in its compact layout.
+  assert.ok(cardBox.width >= (cardBox.compact ? 114 : 140),
+    'La ilustración mide ' + cardBox.width + ' px en el diseño ' + (cardBox.compact ? 'compacto' : 'amplio') + '.');
   await take('mesa');
   await action('Mano de prueba').click();
   assert.equal(await win.locator('.practice-card').count(), 5);
