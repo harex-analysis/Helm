@@ -1,0 +1,15 @@
+{
+  "appId": "local.helm.desktop",
+  "win": {
+    "target": "nsis",
+    "icon": "src/ui/assets/helm.ico",
+    "signAndEditExecutable": false
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "artifactName": "Helm-${version}-Setup.${ext}"
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helm</title>
+  <link rel="icon" href="/src/ui/assets/helm-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/ui/style.css">
+  <link rel="stylesheet" href="/src/ui/playground.css">
+  <link rel="stylesheet" href="/src/ui/navigation.css">
+  <link rel="stylesheet" href="/src/ui/luffy.css">
+  <link rel="stylesheet" href="/src/ui/arcade.css">
+  <link rel="stylesheet" href="/src/ui/voyage.css">
+</head>
+<body>
+  <header class="titlebar">
+    <div class="titlebrand"><img class="helm-mark" src="/src/ui/assets/helm-mark.svg" alt="" width="29" height="29"><span>Helm</span></div>
+    <span class="titlegame">LABORATORIO DE ONE PIECE TCG</span>
+    <div class="title-spacer"></div>
+  </header>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main id="main" class="main" tabindex="-1" aria-label="Área de trabajo">
+      <div class="loading">Abriendo Helm…</div>
+    </main>
+  </div>
+  <dialog id="dialog"></dialog>
+  <div class="arena-scene" id="arena-scene" hidden aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="/src/ui/app.js"></script>
+</body>
+</html>

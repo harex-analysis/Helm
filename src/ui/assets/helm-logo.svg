@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="608" height="188" viewBox="0 0 608 188" role="img" aria-label="Helm">
+  <path fill="#fff1d7" d="M21 6h566l15 15v146l-15 15H21L6 167V21z"/>
+  <path fill="none" stroke="#bd8954" stroke-width="2" d="M21 7h566l14 14v146l-14 14H21L7 167V21z"/>
+  <g transform="translate(24 18) scale(.594)">
+    <path fill="#92332f" d="M46 12h164l34 34v164l-34 34H46l-34-34V46z"/>
+    <path fill="none" stroke="#ebbd73" stroke-width="3" d="M51 23h154l28 28v154l-28 28H51l-28-28V51z"/>
+    <g stroke="#f5d18a" stroke-width="10" stroke-linecap="round">
+      <path d="M128 45v27m0 112v27M56 86l24 14m96 56 24 14M56 170l24-14m96-56 24-14"/>
+      <circle cx="128" cy="128" r="57" fill="none"/>
+    </g>
+    <path fill="#f5d18a" d="M128 81l12 35 35 12-35 12-12 35-12-35-35-12 35-12z"/>
+    <path fill="#793132" d="M128 102l6 20 20 6-20 6-6 20-6-20-20-6 20-6z"/>
+    <path fill="#fff1cb" d="M170 86l-30 54-54 30 30-54z"/>
+    <path fill="#e8b562" d="M170 86l-42 42-42 42 30-54z"/>
+    <circle cx="128" cy="128" r="6" fill="#843337"/>
+  </g>
+  <g fill="#69272a">
+    <path d="M203 47h37v10h-9v29h31V57h-9V47h37v10h-10v75h10v10h-37v-10h9V97h-31v35h9v10h-37v-10h10V57h-10z"/>
+    <path d="M305 47h75v24h-10l-5-13h-32v28h24l4-9h8v29h-8l-4-9h-24v34h31l7-14h10v25h-76v-10h10V57h-10z"/>
+    <path d="M395 47h39v10h-11v74h29l8-16h10v27h-75v-10h10V57h-10z"/>
+    <path d="M484 47h26l22 60 21-60h27v10h-9v75h9v10h-34v-10h8V70l-24 68h-9L497 70v62h8v10h-30v-10h10V57h-9V47z"/>
+  </g>
+  <path fill="#c28a47" d="M196 151h384v3H196zm0-116h384v3H196z"/>
+</svg>

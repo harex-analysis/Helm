@@ -1,0 +1,10 @@
+{
+  "appId": "local.helm.desktop",
+  "win": {
+    "target": "portable",
+    "signAndEditExecutable": false
+  },
+  "portable": {
+    "artifactName": "Helm-${version}-Portable.${ext}"
+  }
+}

@@ -1,0 +1,88 @@
+:root { --felt-deep: #132f43; --rim: #b39062; --arcade-gold: #f7cf86; }
+
+.main {
+  background: radial-gradient(ellipse at 86% 0, #203d57 0, #111e35 50%, #0e182b 82%);
+}
+.page-heading h1 { text-shadow: 0 3px #0a142a; }
+.button { transition: background .15s, border .15s, transform .17s, box-shadow .17s; }
+.button:hover:enabled { transform: translateY(-1px); }
+.button:active:enabled { transform: translateY(1px); }
+
+.deck-shelf {
+  background: radial-gradient(ellipse at 42% 100%, #36616b6e, transparent 58%),
+    linear-gradient(106deg, #18344bea, #14374ae0 60%, #492a43de), url("assets/sea-chart.png") center/cover;
+  border-color: #b4936b;
+  box-shadow: inset 0 0 0 3px #0615225c, inset 0 0 25px #0a152acb, 0 9px 17px #0a1222ad;
+}
+.deck-shelf::before {
+  display: block; opacity: .3;
+  background: repeating-linear-gradient(118deg, #94d4c300 0 3px, #7fbab714 4px 5px);
+}
+.shelf-symbol { color: #ffdd9c; background: #74384b; box-shadow: inset 0 0 0 2px #e8b2834a; }
+.deck-shelf.drop-hover { box-shadow: inset 0 0 0 2px #ffe1a8, inset 0 0 21px #f3b35a64, 0 0 14px #eeb87764; }
+.builder-progress { box-shadow: inset 0 1px 4px #040d1b; }
+.builder-progress i { background: linear-gradient(90deg, #b9414d, #f5c579); box-shadow: 0 0 7px #ffb6755c; }
+.crew-card:hover .crew-art, .shelf-art:hover {
+  transform: perspective(690px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-3px);
+}
+.crew-art::after, .shelf-art::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at var(--sheen-x, 50%) 10%, #fff1b848, #ffcc770c 49%, transparent 72%);
+  opacity: 0; transition: opacity .18s;
+}
+.crew-art:hover::after, .shelf-art:hover::after { opacity: 1; }
+.crew-count { z-index: 2; }
+.arcade-flight { position: fixed; z-index: 100; object-fit: contain; pointer-events: none; transform-origin: top left;
+  border-radius: 6px; filter: drop-shadow(0 11px 11px #081020aa); }
+.arcade-particles { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 101; }
+
+dialog.practice-dialog { width: min(810px, 95vw); }
+.practice-stage { padding: 12px 13px 15px; border: 1px solid #8b755a; border-radius: 10px;
+  background: radial-gradient(ellipse at 55% 85%, #285d687a, #122641 65%), url("assets/sea-chart.png") center/cover;
+  box-shadow: inset 0 0 20px #071829; }
+.practice-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; }
+.practice-header strong { display: inline-block; color: #f4d49a; font: 700 21px Barlow, sans-serif; }
+.practice-header p { color: var(--soft); font-size: 12px; margin-top: 2px; }
+.practice-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; }
+.practice-card { min-width: 0; padding: 5px 5px 7px; border: 1px solid #405979; border-radius: 9px; background: #10233ad9; }
+.practice-card .art { width: 100%; }
+.practice-card.playable { border-color: #ecc77c; box-shadow: 0 0 12px #c9904e62; }
+.practice-card > span:last-child { display: block; color: #f6e7d0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 11px; font-weight: 700; margin-top: 5px; }
+.practice-controls { margin-top: 13px; }
+
+.detail-values .detail-crew { margin-left: auto; border: 0; padding: 0; background: transparent; }
+.detail-crew .crew-sprite { width: 70px; height: 70px; filter: drop-shadow(0 3px 4px #090c1a); }
+
+.arena-lobby { border-color: var(--rim); box-shadow: 0 12px 24px #0a1325a6; }
+.lobby-visual { isolation: isolate; background: linear-gradient(106deg, #246563a3, #102b4261 45%, #7d394fbc),
+    url("assets/sea-chart.png") center/cover; }
+.lobby-visual::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 24% 74%, #60ccd164, transparent 40%), radial-gradient(ellipse at 80% 74%, #fa91783f, transparent 37%);
+  animation: lantern-tide 4.4s ease-in-out infinite alternate; }
+@keyframes lantern-tide { from { opacity: .45; } to { opacity: .95; } }
+.lobby-visual .duel-portrait .portrait-avatar { width: clamp(146px, 20vw, 270px); }
+.portrait-avatar .crew-sprite { animation: crew-breathe 2.5s ease-in-out infinite; filter: drop-shadow(0 5px 6px #0b1226); }
+.opponent .portrait-avatar .crew-sprite { animation-delay: -.95s; }
+@keyframes crew-breathe { 50% { transform: translateY(-4px) scale(1.018); } }
+
+.arena-board { isolation: isolate; border: 1px solid #a28664; box-shadow: 0 8px 14px #061425ab;
+  background: radial-gradient(ellipse at 50% 56%, #2942586b, #09162c9e 79%), url("assets/sea-chart.png") center/cover; }
+.arena-board .lane-own { background-color: #19575e47; }
+.arena-board .lane-rival { background-color: #68375054; }
+.arena-board .lane-turn .lane-top { color: #ffdfa3; }
+.battle-divider.dueling { background: linear-gradient(90deg, #2b5b68, #40334d 46%, #873d4b); }
+.arena-unit { overflow: visible; }
+.arena-unit .crew-sprite { flex-shrink: 0; filter: drop-shadow(0 4px 2px #051221); }
+.arena-unit.unit-rested .crew-sprite { filter: saturate(.7) brightness(.82) drop-shadow(0 4px 2px #051221); }
+.arena-unit .card-avatar { flex-shrink: 1; }
+.arena-hand-tray { background: linear-gradient(#122536, #192f48); }
+.arena-hand-unit:hover { transform: translateY(-2px); }
+.replay-team .board-card { border-color: #73634f; }
+.proposal-tile.selected { box-shadow: inset 0 0 0 1px #dc9a6452, 0 3px 10px #0911256b; }
+.shuffle-panel .shuffle-cards i { filter: drop-shadow(0 7px 6px #14182d8c); }
+
+@media (prefers-reduced-motion: reduce) {
+  .crew-card:hover .crew-art, .shelf-art:hover, .button:hover:enabled, .button:active:enabled, .arena-hand-unit:hover { transform: none; }
+  .lobby-visual::before, .portrait-avatar .crew-sprite { animation: none; }
+}

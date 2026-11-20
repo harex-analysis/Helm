@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Helm">
+  <defs>
+    <linearGradient id="lacquer" x2=".75" y2="1">
+      <stop stop-color="#b83c34"/>
+      <stop offset="1" stop-color="#6b252a"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#lacquer)" d="M46 12h164l34 34v164l-34 34H46l-34-34V46z"/>
+  <path fill="none" stroke="#ebbd73" stroke-width="3" d="M51 23h154l28 28v154l-28 28H51l-28-28V51z"/>
+  <g stroke="#f5d18a" stroke-width="10" stroke-linecap="round">
+    <path d="M128 45v27m0 112v27M56 86l24 14m96 56 24 14M56 170l24-14m96-56 24-14"/>
+    <circle cx="128" cy="128" r="57" fill="none"/>
+  </g>
+  <path fill="#f5d18a" d="M128 81l12 35 35 12-35 12-12 35-12-35-35-12 35-12z"/>
+  <path fill="#793132" d="M128 102l6 20 20 6-20 6-6 20-6-20-20-6 20-6z"/>
+  <path fill="#fff1cb" d="M170 86l-30 54-54 30 30-54z"/>
+  <path fill="#e8b562" d="M170 86l-42 42-42 42 30-54z"/>
+  <circle cx="128" cy="128" r="6" fill="#843337"/>
+</svg>

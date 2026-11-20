@@ -1,0 +1,10 @@
+node_modules/
+dist/
+test-output/
+.env
+.env.*
+*.log
+*.p12
+*.pfx
+*.tmp
+/Abrir DeckLab Desktop.cmd
