@@ -195,16 +195,21 @@ try {
   assert.equal(await win.locator('.arena-hand .arena-unit').count(), 5);
   await action('Conservar mano').click();
   await win.locator('.arena-hand-unit').filter({ hasText: 'Buckin' }).first().click();
-  await action('Desplegar').click();
-  const cinematic = win.locator('#arena-scene[data-kind="deploy"]:not([hidden])');
-  await cinematic.waitFor();
-  assert.ok(await cinematic.evaluate(element => element.getAnimations().length > 0));
+  const deploy = action('Desplegar');
+  await deploy.scrollIntoViewIfNeeded();
+  // Inspect the brief entrance animation before it can expire between Playwright calls.
+  const deployment = await deploy.evaluate(button => {
+    const cinematic = document.querySelector('#arena-scene');
+    button.click();
+    const { kind, sequence } = cinematic.dataset;
+    const animated = !cinematic.hidden && cinematic.getAnimations().some(animation => animation.effect.getTiming().duration > 0);
+    const played = document.querySelector('.lane-own .arena-unit:has([data-card-code="OP08-051"])');
+    played?.click();
+    return { kind, animated, retained: Boolean(played) && cinematic.dataset.sequence === sequence && !cinematic.hidden };
+  });
+  assert.deepEqual(deployment, { kind: 'deploy', animated: true, retained: true });
   await take('escena-despliegue');
   const buckin = win.locator('.lane-own .arena-unit').filter({ hasText: 'Buckin' });
-  const sequence = await cinematic.getAttribute('data-sequence');
-  await buckin.click();
-  assert.equal(await win.locator('#arena-scene').getAttribute('data-sequence'), sequence);
-  assert.equal(await win.locator('#arena-scene').evaluate(element => element.hidden), false);
   const avatar = buckin.locator('[data-card-code="OP08-051"] img');
   await avatar.waitFor();
   await avatar.evaluate(img => img.decode());
