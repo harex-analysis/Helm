@@ -6,7 +6,9 @@ Helm es una aplicación de Windows x64 para construir, optimizar y probar mazos 
 
 ## Instalar y jugar
 
-Ejecuta **Helm-7.0.0-Setup.exe**, elige la carpeta de instalación y abre Helm desde el menú Inicio. El instalador de la beta carece de firma digital. El catálogo y las imágenes de ejemplo están incluidos. Al iniciar con conexión, Helm consulta el catálogo y las restricciones de Bandai y las referencias públicas de Limitless en segundo plano.
+**[Descargar el instalador para Windows x64](https://github.com/harex-analysis/Helm/releases/download/v7.0.0-beta.1/Helm-7.0.0-Setup.exe)**
+
+Inicia sesión con una cuenta que tenga acceso al repositorio para descargar la beta. Ejecuta el instalador, elige la carpeta de instalación y abre Helm desde el menú Inicio. El instalador de la beta carece de firma digital. El catálogo y las imágenes de ejemplo están incluidos. Al iniciar con conexión, Helm consulta el catálogo y las restricciones de Bandai y las referencias públicas de Limitless en segundo plano.
 
 1. **Mesa de mazos.** Arrastra un líder a su espacio o importa una lista de texto. Debajo de tu mazo aparecen las cartas elegibles. Añade copias por arrastre, doble clic o con los botones de cada carta.
 2. **Sugerir mazo.** Un clic completa 50 cartas según el líder y conserva las que ya elegiste. **Optimizar mazo** empieza desde una lista completa y busca la mejor puntuación del modelo. Puedes comparar el plan principal con propuestas de salida rápida, defensa o un rival configurado.
